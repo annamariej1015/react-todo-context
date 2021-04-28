@@ -1,12 +1,13 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
+import GlobalContext from '../context/GlobalContext';
 
-const AddTodoComponent = (addTodo) =>{
-    const [todoItem, setTodoItem] = useState('');
+const AddTodoComponent = () =>{
+    let { todoItem, addTodo, updateTodo } = useContext(GlobalContext);
 
     const handleSubmit = (e) =>{
         e.preventDefault();
         addTodo(todoItem);
-        setTodoItem('');
+        updateTodo('');
     };
 
     return(
@@ -19,7 +20,7 @@ const AddTodoComponent = (addTodo) =>{
                                 type="text"
                                 className='form-control'
                                 value={todoItem}
-                                onChange={e =>setTodoItem(e.target.value)}
+                                onChange={e =>handleSubmit(e.target.value)}
                                 />
                                 <div className="input-group-append">
                                     <button 

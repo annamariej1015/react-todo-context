@@ -1,12 +1,12 @@
 
 import { createContext, useState} from 'react';
-
+import todoData from '../data/todoData';
 export const GlobalContext = createContext();
 
 
 
 export const GlobalProvider= ({children}) => {
-    const [todos, setTodos] =useState([]);
+    const [todos, setTodos] =useState(todoData);
     
     const addTodo = todoItem => {
         setTodos([...todos, {text:todoItem, completed: false, alert: false}]);

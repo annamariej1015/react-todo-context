@@ -1,14 +1,16 @@
-import TodoListItem from './TodoListItems';
+import React, { useContext } from 'react';
+import TodoListItem from './TodoListItem';
+import GlobalContext from '../context/GlobalContext';
 
 
-
-const TodoList = (todos, updateTodo) => {
+const TodoList = () => {
+    let { todos, addTodo, updateTodo } = useContext(GlobalContext);
     return(
         <div id='todo-list'>
             <div className="row">
                 <div className="col">
                     <ul className="list-group">
-                        {todos.map((todo, index) => {
+                    {todos.map((todo, index) => {
                             return (
                                 <TodoListItem todo={todo} updateTodo={updateTodo} key={index} />
                             );

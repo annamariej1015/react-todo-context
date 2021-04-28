@@ -6,7 +6,7 @@ const TodoListItem = (todo, updateTodo) => {
                 <input 
                     type="checkbox"
                     checked={todo.completed}
-                    onChange={() => updateTodo(todo)}
+                    onChange={e => updateTodo(todo)}
                 />
             </label>{' '}
             <span className={todo.completed ? 'text-danger complete' : undefined}>{todo.text}</span>
