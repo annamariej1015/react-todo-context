@@ -1,27 +1,17 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import TodoList from '../components/TodoList';
-import ListItems from '../components/ListItems';
-import { todoData} from '../data/todoData';
+import AddTodoComponent from '../components/AddTodo';
+import GlobalContext from '../context/GlobalContext';
 
 
-const TodoPage = ( todos, updateTodo ) => {
-    const [todos, setTodos] =useState(todoData);
 
+const TodoPage = () => {
+    let { todos, addTodo, updateTodo } = useContext(GlobalContext);
     
     return(
         <div>
-            <div className="row">
-                <div className="col">
-                    <ul className='list-group'>
-                        {todos.map((todo, index)=>  {
-                            return(
-
-                                <ListItems todo={todo} updateTodo={updateTodo} key={index} />
-                            );
-                        })}
-                    </ul>
-                </div>
-            </div>
+            <AddTodoComponent addTodo={addTodo}/>
+            <TodoList todos={todos} updateTodo={updateTodo}/>
         </div>
         
     );
