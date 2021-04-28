@@ -1,11 +1,16 @@
-const ListItems = () => {
+const ListItems = (todo, updateTodo) => {
     return(
-        <div className="row">
-            <div className="col">
-                <h2>List Items Here!</h2>
-            </div>
-        </div>
-    )
+        <li className='list-group-item'>
+            <label htmlFor="">
+                <input 
+                    type="checkbox"
+                    checked={todo.completed}
+                    onChange={() => updateTodo(todo)}
+                />
+            </label>{' '}
+            <span>{todo.text}</span>
+        </li>
+    );
 };
 
 export default ListItems;

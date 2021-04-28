@@ -1,7 +1,9 @@
 import React from 'react';
-import ListItems from '../components/List';
 
-const TodoPage = ( todos, updateTodogit ) => {
+import ListItem from '../components/List';
+
+
+const TodoPage = ( todos, updateTodo ) => {
     return(
         <div>
             <div className="row">
@@ -9,6 +11,7 @@ const TodoPage = ( todos, updateTodogit ) => {
                     <ul className='list-group'>
                         {todos.map((todo, index)=>{
                             return(
+
                                 <ListItems todo={todo} updateTodo={updateTodo} key={index} />
                             );
                         })}
