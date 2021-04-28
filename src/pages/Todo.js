@@ -1,4 +1,5 @@
 import React from 'react';
+import ListItem from '../components/List';
 
 const TodoPage = () => {
     return(
@@ -8,7 +9,7 @@ const TodoPage = () => {
                     <ul className='list-group'>
                         {todos.map((todo, index)=>{
                             return(
-                                <div>todos</div>
+                                <ListItem/>
                             );
                         })}
                     </ul>
