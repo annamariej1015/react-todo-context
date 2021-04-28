@@ -1,15 +1,19 @@
 import React from 'react';
-
-import ListItem from '../components/List';
+import TodoList from '../components/TodoList';
+import ListItems from '../components/ListItems';
+import { todoData} from '../data/todoData';
 
 
 const TodoPage = ( todos, updateTodo ) => {
+    const [todos, setTodos] =useState(todoData);
+
+    
     return(
         <div>
             <div className="row">
                 <div className="col">
                     <ul className='list-group'>
-                        {todos.map((todo, index)=>{
+                        {todos.map((todo, index)=>  {
                             return(
 
                                 <ListItems todo={todo} updateTodo={updateTodo} key={index} />

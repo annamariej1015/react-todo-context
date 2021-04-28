@@ -1,5 +1,5 @@
 import { Route, Switch } from 'react-router-dom';
-import TodoPage from '../pages/Todo';
+import TodoPage from '../pages/TodoPage';
 import InputItems from '../components/Input';
 import ListItems from '../components/List';
 import Navbar from '../components/Navbar';
