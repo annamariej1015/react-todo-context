@@ -1,10 +1,15 @@
 import { BrowserRouter as Router } from 'react-router-dom';
-import AppRouter from './routers/AppRoutes';
+import { GlobalProvider } from './context/GlobalContext';
+import TodoPage from './pages/TodoPage';
+
+
 
 const App = () => {
   return (
     <Router>
-      <AppRouter/>
+      <GlobalProvider>
+        <TodoPage/>
+      </GlobalProvider>
     </Router>
   );
 };

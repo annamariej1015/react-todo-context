@@ -1,4 +1,4 @@
-import ListItem from '../components/ListItems';
+import TodoListItem from './TodoListItems';
 
 const TodoList = (todos, updateTodo) =>{
     return(
@@ -6,9 +6,9 @@ const TodoList = (todos, updateTodo) =>{
             <div className="row">
                 <div className="col">
                     <ul className="list-group">
-                        {todos.map((todo,index)=>{
+                        {todos.map((todo, index)=>{
                             return(
-                                <ListItem todo={todo} updateTodo={updateTodo} key={index}
+                                <TodoListItem todo={todo} updateTodo={updateTodo} key={index}
                                 />
                             );
                         })}

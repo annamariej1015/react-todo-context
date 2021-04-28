@@ -1,4 +1,5 @@
-const ListItems = (todo, updateTodo) => {
+const TodoListItem = (todo, updateTodo) => {
+
     return(
         <li className='list-group-item'>
             <label htmlFor="">
@@ -8,9 +9,9 @@ const ListItems = (todo, updateTodo) => {
                     onChange={() => updateTodo(todo)}
                 />
             </label>{' '}
-            <span>{todo.text}</span>
+            <span className={todo.completed ? 'text-danger complete' : undefined}>{todo.text}</span>
         </li>
     );
 };
 
-export default ListItems;
+export default TodoListItem;
