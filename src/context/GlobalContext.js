@@ -35,3 +35,4 @@ export const GlobalProvider= ({children}) => {
 };
 
 
+export default GlobalContext;

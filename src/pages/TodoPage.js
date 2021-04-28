@@ -1,17 +1,17 @@
-import React, { useState, useEffect, useContext } from 'react';
+import React, { useContext } from 'react';
 import TodoList from '../components/TodoList';
 import AddTodoComponent from '../components/AddTodo';
-import { todoData} from '../data/todoData';
-
+import GlobalContext from '../context/GlobalContext';
 
 
 
 const TodoPage = () => {
+    let { todos, addTodo, updateTodo } = useContext(GlobalContext);
     
     return(
         <div>
-           <AddTodoComponent addTodo={addTodo}/>
-           <TodoList todos={todos} updateTodo={updateTodo}/>
+            <AddTodoComponent addTodo={addTodo}/>
+            <TodoList todos={todos} updateTodo={updateTodo}/>
         </div>
         
     );
